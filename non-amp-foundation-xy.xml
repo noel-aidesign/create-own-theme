@@ -138,13 +138,10 @@ body#layout ul {display: none}
 
 /* HTML5 */
 #navbar-iframe{height:0;visibility:hidden;display:none;}
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent;}
-a:link,a:visited{color:#1BC7A5;text-decoration:none;margin-left:0px;margin-right:0px;}
 a img{border-width:0;}
 img{max-width:100%;vertical-align:middle;border:0;height:auto;}
 .quickedit{display:none;}
 .clear{clear:both;}
-body{margin:0;padding:0;}
 ]]></b:skin>
 <style type='text/css'>
 
