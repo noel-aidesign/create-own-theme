@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html amp='amp' b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta charset='utf-8'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<b:if cond='data:view.isHomepage'>
+<title><data:blog.title/></title>
+<b:elseif cond='data:view.isPost or data:view.isPage or data:view.search.label'/>
+<title><data:blog.pageName/> | <data:blog.title/></title>
+<b:elseif cond='data:view.search.query'/>
+<title><data:view.search.resultsMessage/> | <data:blog.title/></title>
+<b:elseif cond='data:view.search and !data:view.search.label and !data:view.search.query'/>
+<title><data:blog.title/></title>
+<b:elseif cond='data:view.isArchive'/>
+<title><data:view.archive.rangeMessage/> | <data:blog.title/></title>
+<b:elseif cond='data:view.isError'/>
+<title>404 | <data:blog.title/></title>
+</b:if>
+<meta expr:content='data:skin.vars.body_background_color' name='theme-color'/>
+<meta expr:content='data:skin.vars.body_background_color' name='msapplication-navbutton-color'/>
+<meta expr:content='data:skin.vars.body_background_color' name='apple-mobile-web-app-status-bar-style'/>
+<link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon'/>
+<link expr:href='data:blog.homepageUrl + "feeds/posts/default"' expr:title='data:blog.title + " - Atom"' rel='alternate' type='application/atom+xml'/>
+<link expr:href='data:blog.homepageUrl + "feeds/posts/default?alt=rss"' expr:title='data:blog.title + " - RSS"' rel='alternate' type='application/rss+xml'/>
+<link expr:href='"http://www.blogger.com/feeds/" + data:blog.blogId + "/posts/default"' expr:title='data:blog.title + " - Atom"' rel='alternate' type='application/atom+xml'/>
+<data:blog.openIdOpTag/>
+<b:if cond='data:blog.adultContent'>
+<meta content='adult' name='rating'/>
+</b:if>
+<link expr:href='data:blog.homepageUrl' expr:hreflang='data:blog.locale' rel='alternate'/>
+<link expr:href='data:blog.url' rel='canonical'/>
+<b:comment>DESC AND KEYWORD</b:comment>
+<b:if cond='data:blog.metaDescription'>
+<meta expr:content='data:blog.metaDescription' name='description'/>
+<b:if cond='data:view.isHomepage'>
+<meta expr:content='data:blog.title' name='keywords'/>
+<b:else/>
+<meta expr:content='data:blog.pageName' name='keywords'/>
+</b:if>
+<b:else/>
+<b:if cond='data:view.isHomepage'>
+<meta expr:content='data:blog.title' name='description'/>
+<meta expr:content='data:blog.title' name='keywords'/>
+<b:else/>
+<meta expr:content='data:blog.pageName' name='description'/>
+<meta expr:content='data:blog.pageName' name='keywords'/>
+</b:if>
+</b:if>
+<b:if cond='data:blog.pageType in {"archive"} or data:blog.searchLabel or data:blog.searchQuery'>
+<meta content='noindex,nofollow' name='robots'/>
+</b:if>
+<!--[if IE]><script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/579771828-ieretrofit.js"></script><![endif]-->
+<!--[if IE]><script>/*<![CDATA[*/(function(){var a=("abbr,article,aside,audio,canvas,datalist,details,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video").split(",");for(var b=0;b<a.length;b++){document.createElement(a[b])}try{document.execCommand("BackgroundImageCache",false,true)}catch(c){}})();/*]]>*/</script><![endif]-->
+
+<b:comment>GOOGLE PLUS</b:comment>
+<b:if cond='data:blog.googleProfileUrl'>
+<link expr:href='data:blog.googleProfileUrl' rel='publisher'/>
+<link expr:href='data:blog.googleProfileUrl' rel='author'/>
+<data:blog.meTag/>
+</b:if>
+
+<b:comment>FACEBOOK</b:comment>
+<meta content='xxx_idfanspage_xxx' property='fb:pages'/>
+
+<b:comment>WEBMASTER</b:comment>
+<meta content='' name='google-site-verification'/>
+<meta content='' name='msvalidate.01'/>
+<meta content='' name='alexaVerifyID'/>
+
+<b:comment>OPEN GRAPH</b:comment>
+<meta expr:content='data:blog.title' property='og:site_name'/>
+<b:if cond='data:view.isMultipleItems'>
+<meta expr:content='data:blog.title' property='og:title'/>
+<meta expr:content='data:blog.url' property='og:url'/>
+<meta content='website' property='og:type'/>
+<b:if cond='data:blog.metaDescription'>
+<meta expr:content='data:blog.metaDescription' property='og:description'/>
+<b:else/>
+<meta expr:content='data:blog.pageName + "."' property='og:description'/>
+</b:if>
+<meta expr:content='"https://placehold.it/800x600/222/eee?text=" + data:blog.title + ""' property='og:image'/>
+<meta content='800' property='og:image:width'/>
+<meta content='600' property='og:image:height'/>
+<meta expr:content='data:blog.title' property='og:image:alt'/>
+<b:elseif cond='data:view.isSingleItem'/>
+<meta expr:content='data:blog.pageName + " | " + data:blog.title' property='og:title'/>
+<meta expr:content='data:blog.url' property='og:url'/>
+<meta content='article' property='og:type'/>
+<b:if cond='data:blog.metaDescription'>
+<meta expr:content='data:blog.metaDescription' property='og:description'/>
+<b:else/>
+<meta expr:content='data:blog.pageName + "."' property='og:description'/>
+</b:if>
+<b:if cond='data:view.featuredImage'>
+<meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='og:image'/>
+<meta content='800' property='og:image:width'/>
+<meta content='600' property='og:image:height'/>
+<meta expr:content='data:blog.pageName + " | " + data:blog.title' property='og:image:alt'/>
+<b:else/>
+<meta expr:content='"https://placehold.it/800x600/222/eee?text=" + data:blog.pageName + ""' property='og:image'/>
+<meta content='800' property='og:image:width'/>
+<meta content='600' property='og:image:height'/>
+<meta expr:content='data:blog.pageName + " | " + data:blog.title' property='og:image:alt'/>
+</b:if>
+</b:if>
+<meta content='en_US' property='og:locale'/>
+<meta content='en_GB' property='og:locale:alternate'/>
+<meta content='id_ID' property='og:locale:alternate'/>
+
+<b:comment>TWITTER</b:comment>
+<b:if cond='data:view.isHomepage'>
+<meta content='summary_large_image' name='twitter:card'/>
+<b:else/>
+<meta content='summary' name='twitter:card'/>
+</b:if>
+<meta content='@username' name='twitter:site'/>
+<meta content='@username' name='twitter:creator'/>
+<meta expr:content='data:blog.url' name='twitter:url'/>
+<b:if cond='data:view.isMultipleItems'>
+<meta expr:content='data:blog.title' name='twitter:title'/>
+<b:if cond='data:blog.metaDescription'>
+<meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+<b:else/>
+<meta expr:content='data:blog.title' name='twitter:description'/>
+</b:if>
+<meta expr:content='"https://placehold.it/800x600/222/eee?text=" + data:blog.title + ""' property='twitter:image'/>
+<b:elseif cond='data:view.isSingleItem'/>
+<meta expr:content='data:blog.pageName + " | " + data:blog.title' name='twitter:title'/>
+<b:if cond='data:blog.metaDescription'>
+<meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+<b:else/>
+<meta expr:content='data:blog.pageName + "."' name='twitter:description'/>
+</b:if>
+<b:if cond='data:view.featuredImage'>
+<meta expr:content='resizeImage(data:view.featuredImage, 1200, "1200:630")' property='twitter:image'/>
+<b:else/>
+<meta expr:content='"https://placehold.it/800x600/222/eee?text=" + data:blog.pageName + ""' property='twitter:image'/>
+</b:if>
+</b:if>
+
+&lt;style type=&quot;text/css&quot;&gt;&lt;!-- /* <b:skin><![CDATA[
+/*
+Bagi anda yang mengerti dan blogger profesional pastinya tidak akan menghapus link ini. Membuat template ini tidak cukup 1 jam bro!
+Blogger Template Style
+Name       : Aikatsu AMP Template
+Date       : 01/11/2018
+Version    : 3
+Updated by : Athallah PS
+Website    : http://seiratemplate-ps.blogspot.com/ atau http://theme.athallahps.com
+
+/* tata letak fixed */
+body#layout .outer-wrapper {width:970px}
+body#layout #wrapper {width:970px}
+body#layout #header {width:29%;float:left;margin-top:30px}
+body#layout #header-ads {width:69%;float:right;margin-top:30px}
+body#layout #artikel-wrapper {width:69%;float:left}
+body#layout #sidebar-wrapper{width:29%;float:right}
+body#layout #footer {width:970px}
+body#layout .footer {width:30%;float:left}
+body#layout ul {display: none}
+
+/* HTML5 */
+#navbar-iframe{height:0;visibility:hidden;display:none;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent;}
+a:link,a:visited{color:#1BC7A5;text-decoration:none;margin-left:0px;margin-right:0px;}
+a img{border-width:0;}
+img{max-width:100%;vertical-align:middle;border:0;height:auto;}
+.quickedit{display:none;}
+.clear{clear:both;}
+body{background:#eaeaea;margin:0;padding:0;font-family: calibri;color:#2c3e50;}
+]]></b:skin>
+<b:template-skin><![CDATA[
+/* Tambah Theme Skin */
+]]></b:template-skin>
+<style amp-boilerplate='amp-boilerplate'>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate='amp-boilerplate'>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style type='text/css' amp-custom='amp-custom'>
+
+</style>
+
+<script async='async' src='https://cdn.ampproject.org/v0.js'></script>
+</head>
+<body>
+
+<b:section class='main' id='main'>
+  <b:widget id='Blog1' locked='true' title='Posting Blog' type='Blog' version='2' visible='true'></b:widget>
+</b:section>
+
+</body>
+</html>
