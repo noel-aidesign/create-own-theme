@@ -10,6 +10,7 @@
 <meta charset='utf-8'/>
 <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
 <b:if cond='data:view.isHomepage'>
   <title><data:blog.title/></title>
   <b:elseif cond='data:view.isPost or data:view.isPage or data:view.search.label'/>
